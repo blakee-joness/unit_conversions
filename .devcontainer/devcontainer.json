@@ -1,15 +1,19 @@
 {
     "name": "C# Dev Container",
-    "image": "mcr.microsoft.com/dotnet/sdk:6.0",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "customizations": {
         "settings": {
             "terminal.integrated.shell.linux": "/bin/bash"
         },
         "vscode": {
             "extensions": [
-                "ms-dotnettools.csdevkit"
+                "ms-dotnettools.csdevkit",
+                "csharpier.csharpier-vscode"
             ]
         },
-        "postCreateCommand": "dotnet restore"
-    }
+        "postCreateCommand": "dotnet restore && dotnet tool restore --tool-manifest /workspaces/unit_conversions/.config/dotnet-tools.json"
+    },
+    "remoteUser": "root"
 }
