@@ -2,6 +2,7 @@ name: Validate PR
 on:
   pull_request:
     branches: [ main ]
+  push: 
 jobs:
   check_formatting:
     runs-on: ubuntu-latest
