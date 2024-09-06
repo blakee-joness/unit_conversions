@@ -1,5 +1,4 @@
 {
-    "editor.formatOnSave": true,
     "[csharp]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "csharpier.csharpier-vscode"
