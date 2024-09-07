@@ -2,6 +2,8 @@ name: Run CSharpier
 
 on: [push, pull_request]
 
+permissions: read-all
+
 jobs:
   format:
     runs-on: ubuntu-latest
