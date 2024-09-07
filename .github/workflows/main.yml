@@ -18,3 +18,21 @@ jobs:
 
     - name: Run CSharpier Check
       run: dotnet csharpier . --check --config-path "./.config/.csharpierrc"
+
+  codeql-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@codeql-bundle-v2.18.3
+      with:
+        languages: csharp
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@codeql-bundle-v2.18.3
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@codeql-bundle-v2.18.3
