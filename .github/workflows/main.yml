@@ -12,12 +12,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 20
 
       - name: Set up .NET SDK
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.0.401'
+          dotnet-version: 8.0.401
 
       - run: |
           dotnet --version
