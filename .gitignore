@@ -15,9 +15,6 @@ obj/
 *.ide
 *.cache
 
-# Visual Studio Code settings
-.vscode/
-
 # DotNet specific
 project.lock.json
 project.fragment.lock.json
@@ -35,3 +32,15 @@ artifacts/
 # Rider
 .idea/
 *.sln.iml
+
+# Coverage and test results
+TestResults/
+*.coverage
+*.coveragexml
+
+# Publish output
+publish/
+
+# Local history and temporary files
+.localhistory/
+*.tmp
