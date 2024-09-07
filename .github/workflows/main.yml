@@ -1,5 +1,4 @@
-name: Run CSharpier
-
+name: gh-actions
 on: [push, pull_request]
 
 permissions: read-all
@@ -14,6 +13,8 @@ jobs:
       
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
+      with:
+          dotnet-version: '8.0.x'
 
     - name: Install CSharpier
       run: dotnet tool install csharpier
@@ -21,20 +22,23 @@ jobs:
     - name: Run CSharpier Check
       run: dotnet csharpier . --check --config-path "./.config/.csharpierrc"
 
-  codeql-analysis:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@codeql-bundle-v2.18.3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
       with:
-        languages: csharp
+          dotnet-version: '8.0.x'
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@codeql-bundle-v2.18.3
+    - name: Restore dependencies
+      run: dotnet restore
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@codeql-bundle-v2.18.3
+    - name: Build
+      run: dotnet build --no-restore
+
+    - name: Test
+      run: dotnet test --no-build --verbosity minimal
