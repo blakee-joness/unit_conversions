@@ -1,23 +1,24 @@
-name: Validate PR
+name: Run CSharpier
 
-on:
-  pull_request:
-    branches: [ main ]
-  push: 
+on: [push, pull_request]
+
 jobs:
-  check_formatting:
+  format:
     runs-on: ubuntu-latest
-    name: Check Formatting
+
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
           node-version: 20
-      - name: Set up .NET SDK
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 8.0.401
-      - run: |
-          dotnet --version
-          dotnet tool restore
-          dotnet csharpier --check .
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0.401' # Specify the .NET version you are using
+
+    - name: Install CSharpier
+      run: dotnet tool install -g csharpier
+
+    - name: Run CSharpier
+      run: dotnet csharpier .
