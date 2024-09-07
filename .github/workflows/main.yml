@@ -13,10 +13,6 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
 
-      with:
-        dotnet-version: '8.0.x' # Specify the .NET version you are using
-        node-version: 20
-
     - name: Install CSharpier
       run: dotnet tool install csharpier
 
