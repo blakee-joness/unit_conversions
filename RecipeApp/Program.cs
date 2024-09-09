@@ -21,22 +21,7 @@
         /// </summary>
         static void Main() // Entry point of the application
         {
-            Console.WriteLine("Please enter teaspoons amount:");
-            string? input = Console.ReadLine();
-
-            if (double.TryParse(input, out double teaspoons))
-            // Check if the input is a value that can be converted to double
-            {
-                double milliliters = ConvertTeaspoonsToMilliliters(teaspoons);
-                Console.WriteLine(
-                    $"The conversion of {teaspoons} teaspoons to milliliters is {milliliters} ml"
-                );
-            }
-            else
-            // It's not, so we write to the user to enter a numeric value
-            {
-                Console.WriteLine("Invalid input. Please enter a numeric value.");
-            }
+            double input = GetTeaspoonFromConsole();
         }
 
         /// <summary>
@@ -48,6 +33,32 @@
             Console.WriteLine("Converting Teaspoons to Milliliters");
             const double millilitersPerTeaspoon = 4.92892;
             return Math.Round(teaspoons * millilitersPerTeaspoon, 2);
+        }
+
+        /// <summary>
+        /// Get Teaspoon input value from Console
+        /// </summary>
+        /// <returns>double</returns>
+        static double GetTeaspoonFromConsole()
+        {
+            Console.WriteLine("Please enter teaspoons amount:");
+            string? input = Console.ReadLine();
+
+            if (double.TryParse(input, out double teaspoons))
+            // Check if the input is a value that can be converted to double
+            {
+                double milliliters = ConvertTeaspoonsToMilliliters(teaspoons);
+                Console.WriteLine(
+                    $"The conversion of {teaspoons} teaspoons to milliliters is {milliliters} ml"
+                );
+                return milliliters; // Add a return statement for the successful conversion
+            }
+            else
+            // It's not, so we write to the user to enter a numeric value
+            {
+                Console.WriteLine("Invalid input. Please enter a numeric value.");
+                return 0.00; // Add a return statement for the invalid input
+            }
         }
     }
 }
