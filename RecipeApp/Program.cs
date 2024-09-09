@@ -54,10 +54,8 @@
                 return milliliters; // Add a return statement for the successful conversion
             }
             else
-            // It's not, so we write to the user to enter a numeric value
             {
-                Console.WriteLine("Invalid input. Please enter a numeric value.");
-                return 0.00; // Add a return statement for the invalid input
+                throw new ArgumentException("Invalid input. Please enter a numeric value.");
             }
         }
     }
