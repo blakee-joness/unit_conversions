@@ -7,5 +7,6 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "csharpier.dev.customPath": "${workspaceFolder}/.config/.csharpierrc"
+    "csharpier.dev.customPath": "${workspaceFolder}/.config/.csharpierrc",
+    "editor.formatOnType": true
 }
