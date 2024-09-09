@@ -12,7 +12,7 @@
 
 
     /// <summary>
-    /// // Holder of functions for the application
+    /// Holder of functions for the application
     /// </summary>
     class Program
     {
