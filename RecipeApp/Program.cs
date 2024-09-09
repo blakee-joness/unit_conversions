@@ -24,18 +24,24 @@
             Console.WriteLine("Please enter teaspoons amount:");
             string? input = Console.ReadLine();
 
-            Console.WriteLine(
-                $"The conversion of {input} to milliliters is {ConvertTeaspoonsToMilliliters(input)}"
-            );
+            if (double.TryParse(input, out double teaspoons))
+            // Check if the input is a value that can be converted to double
+            {
+                double milliliters = ConvertTeaspoonsToMilliliters(teaspoons);
+                Console.WriteLine($"The conversion of {teaspoons} teaspoons to milliliters is {milliliters} ml");
+            }
+            else
+            // It's not, so we write to the user to enter a numeric value
+            {
+                Console.WriteLine("Invalid input. Please enter a numeric value.");
+            }
         }
 
         /// <summary>
-        /// Converts the given number of teaspoons to milliliters.
+        /// Convert Teaspoons to Milliliters
         /// </summary>
-        /// <param name="teaspoons">The number of teaspoons to convert.</param>
-        /// <returns>The equivalent number of milliliters.</returns>
-        ///
-        static void ConvertTeaspoonsToMilliliters(double teaspoons) // Function to convert Teaspoons to Milliliters
+        /// <param name="teaspoons"></param>
+        static double ConvertTeaspoonsToMilliliters(double teaspoons) // Function to convert Teaspoons to Milliliters
         {
             Console.WriteLine("Converting Teaspoons to Milliliters");
             const double millilitersPerTeaspoon = 4.93;
