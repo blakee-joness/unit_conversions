@@ -18,8 +18,7 @@
         "vscode": {
             "extensions": [
                 "ms-dotnettools.csdevkit",
-                "csharpier.csharpier-vscode",
-                "k--kato.docomment"
+                "csharpier.csharpier-vscode"
             ]
         },
         "postCreateCommand": "dotnet restore && dotnet tool restore --tool-manifest /workspaces/unit_conversions/.config/dotnet-tools.json"
