@@ -28,7 +28,9 @@
             // Check if the input is a value that can be converted to double
             {
                 double milliliters = ConvertTeaspoonsToMilliliters(teaspoons);
-                Console.WriteLine($"The conversion of {teaspoons} teaspoons to milliliters is {milliliters} ml");
+                Console.WriteLine(
+                    $"The conversion of {teaspoons} teaspoons to milliliters is {milliliters} ml"
+                );
             }
             else
             // It's not, so we write to the user to enter a numeric value
