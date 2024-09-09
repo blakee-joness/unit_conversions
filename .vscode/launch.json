@@ -18,6 +18,27 @@
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/RecipeApp/Views"
             }
+        },
+        {
+            "name": "ASP.NET Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/RecipeAppApi/bin/Debug/net8.0/RecipeAppApi.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/RecipeAppApi",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/RecipeAppApi/Views"
+            },
+            "internalConsoleOptions": "openOnSessionStart"
         }
     ]
 }
