@@ -1,12 +1,11 @@
 {
     "[csharp]": {
         "editor.formatOnSave": true,
+        "editor.formatOnType": true,
         "editor.defaultFormatter": "csharpier.csharpier-vscode"
     },
     "[json, jsonc]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "csharpier.dev.customPath": "${workspaceFolder}/.config/.csharpierrc",
-    "editor.formatOnType": true
 }
