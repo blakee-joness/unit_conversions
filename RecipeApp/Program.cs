@@ -13,8 +13,9 @@
     {
         static void Main(string[] args) // Entry point of the application
         {
-            // Console.ReadLine();
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Please enter user input:");
+            string? input = Console.ReadLine();
+            Console.WriteLine($"You entered: {input}");
         }
     }
 }
