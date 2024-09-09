@@ -8,7 +8,7 @@
     // | 1 pint            | 0.47 liters                |
     // | 1 quart           | 0.95 liters                |
     // | 1 tablespoon      | 14.79 milliliters          |
-    // | 1 teaspoon        | 4.93 milliliters           |
+    // | 1 teaspoon        | 4.92892 milliliters        |
 
 
     /// <summary>
@@ -44,8 +44,8 @@
         static double ConvertTeaspoonsToMilliliters(double teaspoons) // Function to convert Teaspoons to Milliliters
         {
             Console.WriteLine("Converting Teaspoons to Milliliters");
-            const double millilitersPerTeaspoon = 4.93;
-            return teaspoons * millilitersPerTeaspoon;
+            const double millilitersPerTeaspoon = 4.92892;
+            return Math.Round(teaspoons * millilitersPerTeaspoon);
         }
     }
 }
